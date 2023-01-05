@@ -11,16 +11,16 @@ items = tuple(snack_calories.items())
 print(items)
 
 item = ('호박엿', '식혜')
-first = item[0]
+first = item[0] # 숫자 인덱스로 접근 가능하다. 
 second = item[1]
 print(first, '&', second)
 
 pair = ('약과', '호박엿')
 # 오류가 나는 부분. 오류를 보고 싶으면 커멘트를 해제할것
-#pair[0] = '타래과'    # TypeError
+#pair[0] = '타래과'    # TypeError : 튜플은 값을 변경할 수 없다. 
 
 item = ('호박엿', '식혜')
-first, second = item # 언패킹
+first, second = item # 언패킹. 이렇게 하면 한 문장 안에서 여러 값을 대입할 수 있다. 
 print(first, '&', second)
 
 favorite_snacks = {
@@ -53,7 +53,7 @@ def bubble_sort(a):
     for _ in range(len(a)):
         for i in range(1, len(a)):
             if a[i] < a[i-1]:
-                a[i-1], a[i] = a[i], a[i-1] # 맞바꾸기
+                a[i-1], a[i] = a[i], a[i-1] # 위와는 다르게 한 줄로도 두 원소를 서로 맞바꾸기
 
 
 names = ['프레즐', '당근', '쑥갓', '베이컨']
@@ -68,4 +68,6 @@ for i in range(len(snacks)):
     print(f'#{i+1}: {name} 은 {calories} 칼로리입니다.')
 
 for rank, (name, calories) in enumerate(snacks, 1):
-    print(f'#{rank}: {name} 은 {calories} 칼로리입니다.')
+    print(f'#{rank}: {name} 은 {calories} 칼로리입니다.') # 훨씬 파이썬다운 코드 방식이다. 명확하다.
+ 
+# 파이썬 언패킹은 일반화돼 있으므로 모든 이터러블에 적용할 수 있다.
